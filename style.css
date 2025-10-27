@@ -1,0 +1,285 @@
+body{
+    font-family: "Poppins", sans-serif;
+    background-color:  #FFF7FA;
+    color: #6B4E63;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #FFC1D6;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 4px 10px #E1A8C1;
+}
+
+header h1{
+    margin: 0;
+    color: #6B4E63;
+}
+
+main{
+    background-color: #FFE6EC;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px #E1A8C1;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    gap: 10px;
+}
+
+#task-input{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #FF8FAB;
+    border-radius: 8px;
+    outline: none;
+}
+
+#task-input:focus{
+    border-color: #FF4FA1;
+    box-shadow: 0 0 5px #FF4FA1;
+}
+
+button{
+    background-color: #FF4FA1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #FF8FAB;
+}
+
+#task-list{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin-top: 20px 0;
+    flex-grow: 1;
+}
+
+#task-list li {
+  background-color: white;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#task-list li span {
+  flex: 1; 
+  word-break: break-word; 
+}
+
+#task-list li .action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0; 
+}
+
+.completed span{
+    text-decoration: line-through;
+    color: #6B4E63;
+    opacity: 0.8;
+    background-color: #C3E8C3;
+}
+
+.delete-btn{
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #FF4FA1;
+    transition: 0.2s;
+}
+.delete-btn:hover{
+    color: #FF8FAB;
+}
+
+footer{
+    background-color: #FFC1D6;
+    width:100%;
+    text-align: center;
+    padding: 12px 0;
+    box-shadow: 0 -4px 10px #E1A8C1;
+    margin-top: 30px;
+    position: relative;
+    font-size: 14px;
+    color: #6B4E63;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.filters{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.filters button {
+  background-color: #FFE6EC;
+  border: 1px solid #FF8FAB;
+  border-radius: 8px;
+  color: #6B4E63;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: all 0.3s;
+}
+
+.filters button:hover {
+  background-color: #FF8FAB;
+  color: white;
+}
+
+.active-filter {
+  background-color: #FF4FA1;
+  color: white;
+  border-color: #FF4FA1;
+}
+
+.clear-btn {
+  background-color: #FF4FA1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px #E1A8C1;
+  align-self: center;
+}
+
+.clear-btn:hover {
+  background-color: #FF8FAB;
+  transform: scale(1.05);
+}
+
+.edit-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #6B4E63;
+  transition: 0.2s;
+  margin-right: 8px;
+}
+
+.edit-btn:hover {
+  color: #FF4FA1;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #FF8FAB;
+  outline: none;
+}
+
+.empty-msg {
+  display: none;              
+  text-align: center;          
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #888;
+  opacity: 0;                  
+  transition: opacity 0.4s ease;
+}
+
+.empty-msg.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Phones (portrait, ≤480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  main {
+    width: 95%;
+    padding: 15px;
+  }
+
+  form {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #task-input,
+  button {
+    width: 100%;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .filters button {
+    flex: 1;
+    font-size: 13px;
+    padding: 6px 0;
+  }
+
+  #task-list li {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
+
+/* Tablets (481px–768px) */
+@media (max-width: 768px) {
+  main {
+    max-width: 500px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  #task-input,
+  button {
+    font-size: 15px;
+  }
+}
+
+/* Large Screens (≥769px) */
+@media (min-width: 769px) {
+  main {
+    max-width: 600px;
+  }
+}
+
