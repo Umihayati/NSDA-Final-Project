@@ -73,9 +73,9 @@ function renderTasks() {
     btnContainer.appendChild(deleteBtn);
     btnContainer.appendChild(editBtn);
     
+    li.appendChild(checkbox);
     li.appendChild(textSpan);
     li.appendChild(btnContainer);
-    li.appendChild(checkbox);
     taskList.appendChild(li);
   });
 }

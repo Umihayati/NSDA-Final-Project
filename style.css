@@ -85,8 +85,15 @@ button:hover{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.task-checkbox{
+  width: 18px;
+  height: 18px;
+  accent-color: #FF4FA1;
+  cursor: pointer;
 }
 
 #task-list li span {
