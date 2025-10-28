@@ -129,10 +129,13 @@ clearAllBtn.addEventListener("click", () => {
     return;
   }
 
-  if (confirm("Are you sure you want to clear all tasks?")) {
-    tasks = [];
-    updateLocalStorage();
-  }
+  if (!confirm("Are you sure you want to clear all tasks?")) return;
+  currentFilter = "all";
+  localStorage.setItem("currentFilter", "all");
+  setActiveFilterButton("all");
+  tasks = [];
+  updateLocalStorage();
+
 });
 
 function enableEditMode(task, textSpan) {
