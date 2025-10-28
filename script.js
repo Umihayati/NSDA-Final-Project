@@ -5,7 +5,7 @@ const taskList = document.getElementById("task-list");
 const emptyMessage = document.getElementById("empty-message");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-let currentFilter = "all";
+let currentFilter = localStorage.getItem("currentFilter") || "all";
 
 setActiveFilterButton(currentFilter);
 renderTasks();
@@ -110,6 +110,7 @@ document.getElementById("filter-completed").addEventListener("click", () => setF
 
 function setFilter(filterType) {
   currentFilter = filterType;
+  localStorage.setItem("currentFilter", filterType);
   setActiveFilterButton(filterType);
   renderTasks();
 }
