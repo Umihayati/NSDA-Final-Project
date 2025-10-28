@@ -36,6 +36,15 @@ function renderTasks() {
     const li = document.createElement("li");
     li.className = "task-item";
 
+    const checkbox = document.createElement("input");
+    checkbox.type="checkbox";
+    checkbox.checked=task.completed;
+    checkbox.classList.add("task-checkbox");
+    checkbox.addEventListener("change", ()=>{
+      task.completed=checkbox.checked;
+      updateLocalStorage();
+    });
+
     const textSpan = document.createElement("span");
     textSpan.textContent = task.text;
     textSpan.style.flex = "1";
@@ -59,13 +68,6 @@ function renderTasks() {
       enableEditMode(task, textSpan);
     });
 
-    li.addEventListener("click", () => {
-      const t = tasks.find(t => t.id === task.id);
-      if (t) {
-        t.completed = !t.completed;
-        updateLocalStorage();
-      }
-    });
     const btnContainer = document.createElement("div");
     btnContainer.classList.add("action-buttons");
     btnContainer.appendChild(deleteBtn);
@@ -73,6 +75,7 @@ function renderTasks() {
     
     li.appendChild(textSpan);
     li.appendChild(btnContainer);
+    li.appendChild(checkbox);
     taskList.appendChild(li);
   });
 }
