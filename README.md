@@ -32,3 +32,15 @@ It allows users to add, edit, delete, and filter tasks — with data persistence
 1. Clone the repository:
    ```bash
    git clone https://github.com/Umihayati/NSDA-Final-Project.git
+
+## 📸 Screenshots
+
+### Main Interface
+![Main Interface](assets/screenshot.png)
+
+### Completed Tasks View
+![Completed Tasks](assets/screenshot1.png)
+
+### Incompleted Tasks View
+![Active Tasks](assets/screenshot2.png)
+
